@@ -1,0 +1,63 @@
+<button (click)="cambiarPantallas()" class="btn btn-success">test</button>
+<p>{{cambio}}</p>
+<br>
+<div class="row justify-content-around">
+  <div class="col-4">
+    <div class="">
+      <form (ngSubmit)="searchMyDebt()">
+      <div class="card">
+        <div class="card-header text-center tamañoCard">
+          <h2>Mi Deuda</h2> 
+        </div>
+        <div class="card-body text-center">
+           <label for="exampleSelect1" class="form-label mt-4">Ingrese la cedula</label>
+           <input class="form-control" type="text" [(ngModel)]="id_myDebt" name="id_myDebt" id="" placeholder="0-000-000">
+         <br>
+         <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="">
+      <form (ngSubmit)="serarchToysSeparate()" >
+      <div class="card">
+        <div class="card-header text-center tamañoCard">
+          <h2>Mi juguetes separados</h2> 
+        </div>
+        <div class="card-body text-center">
+           <label for="exampleSelect1" class="form-label mt-4">Ingrese la cedula</label>
+           <input class="form-control" type="text" [(ngModel)]="id_myToys" name="id_myToys" id="" placeholder="0-000-000">
+         <br>
+         <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row justify-content-center">
+  <div class="col-lg-4 offset col-lg-4">
+   <form (ngSubmit)="buscarNoticia()">
+     <fieldset>
+       <legend>Buscador de noticias</legend>
+       <div class="form-group">
+         <label for="exampleSelect1" class="form-label mt-4">Elija la categoria</label>
+         <select class="form-select" name="categoria" [(ngModel)]="categoriaSeleccionada">
+           <option *ngFor="let categoria of categorias" [value]="categoria.value">{{categoria.nombre}}</option>
+         </select>
+       </div>
+       <div class="form-group">
+         <label for="exampleSelect1" class="form-label mt-4">Elija el pais </label>
+         <select class="form-select" name="pais" [(ngModel)]="paisSeleccionado">
+           <option *ngFor="let pais of paises" [value]="pais.value">{{pais.nombre}}</option>
+         </select>
+       </div>
+       <br>
+       <button type="submit" class="btn btn-primary">Buscar</button>
+     </fieldset>
+   </form>
+  </div>
+</div>

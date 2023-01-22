@@ -1,0 +1,46 @@
+  <app-navbar 
+            [titulo] = "title"
+            (searchData) = 'changeDisplay($event)'> 
+  </app-navbar>
+<div class="container">
+  <app-formulario *ngIf="statusDisplay[0].status==true"
+                  (parametrosSeleccionado) = 'buscarNoticia($event)' 
+                  (searchData) = 'searchData($event)'
+                  > </app-formulario>
+</div>
+<br>
+<div class="container">
+  <app-my-toys-separate *ngIf="statusDisplay[1].status==true"> </app-my-toys-separate>
+</div>
+<div class="container">
+  <app-my-payments *ngIf="statusDisplay[2].status==true"> </app-my-payments>
+</div>
+<div class="container">
+  <app-mi-deuda *ngIf="statusDisplay[3].status==true" > </app-mi-deuda>
+</div>
+<div class="container">
+  <app-pay-debt *ngIf="statusDisplay[4].status==true"> </app-pay-debt>
+</div>
+<div class="container">
+  <app-separate-toys *ngIf="statusDisplay[5].status==true"> </app-separate-toys>
+</div>
+<div class="container">
+  <app-all-toys *ngIf="statusDisplay[6].status==true"> </app-all-toys>
+</div>
+<div class="container">
+  <app-add-client *ngIf="statusDisplay[7].status==true"></app-add-client>
+</div>
+<div class="container">
+  <app-add-toys *ngIf="statusDisplay[8].status==true"></app-add-toys>
+</div>
+<div class="container">
+  <app-delete-client *ngIf="statusDisplay[9].status==true"></app-delete-client>
+</div>
+<div class="container">
+  <app-delete-toys *ngIf="statusDisplay[10].status==true"> </app-delete-toys>
+</div>
+<br>
+<app-spinner *ngIf="loading===true"></app-spinner>
+<div class="container ">
+  <app-listado-noticias [listaNoticias] = "listaNotice"> </app-listado-noticias> 
+</div>
