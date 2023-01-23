@@ -1,1 +1,42 @@
-<p>my-toys-separate works!</p>
+<div class="row justify-content-around mt-3">
+    <div class="col-6 text-center">
+      <h2>Juguetes separados</h2>
+    </div>
+</div>
+<div class="row justify-content-around mt-3">
+    <div class="col-8">
+            <div class="">
+              <form (ngSubmit)="searchMyToys()">
+              <div class="card">
+                <div class="card-header text-center tamañoCard">
+                  <h2>Mi Deuda</h2> 
+                </div>
+                <div class="card-body text-center">
+                   <label for="exampleSelect1" class="form-label mt-4">Ingrese la cedula</label>
+                   <input class="form-control" type="text" [(ngModel)]="id_searchToys" name="id_myDebt" id="" placeholder="0-000-000">
+                 <br>
+                 <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+              </div>
+              </form>
+            </div>
+    </div>
+</div>
+<div class="row justify-content-around mt-3">
+    <div class="col-8">
+        <table class="table">
+            <thead>
+              <tr>
+                <td *ngFor="let data of dataTest">
+                    {{data.name}}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td *ngFor="let data of dataTest">
+                    {{data.data}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

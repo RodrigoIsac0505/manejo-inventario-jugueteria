@@ -17,4 +17,10 @@ export class NoticiasService {
     return this.http.get(URL);
   }
 
+  getFirstData(parametro:any) : Observable<any>{
+    const URL = "http://localhost:3000/api/v1/clientes/miDeuda/8-960-912";
+  
+    return this.http.get(URL);
+  }
+
 }

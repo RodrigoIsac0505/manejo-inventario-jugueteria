@@ -1,7 +1,8 @@
-  <app-navbar 
+<app-navbar 
             [titulo] = "title"
             (searchData) = 'changeDisplay($event)'> 
-  </app-navbar>
+</app-navbar>
+<br>
 <div class="container">
   <app-formulario *ngIf="statusDisplay[0].status==true"
                   (parametrosSeleccionado) = 'buscarNoticia($event)' 

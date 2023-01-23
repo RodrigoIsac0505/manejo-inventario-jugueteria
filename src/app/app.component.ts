@@ -44,12 +44,33 @@ export class AppComponent {
       )
   }
 
+  firstFormulate(parametro:any){
+      this.loading=true;
+      this._api.getFirstData(parametro).subscribe(result=>
+        {
+          console.log(result)
+          this.loading=false;
+          this.cargarFormulario = true;
+          this.listaNotice = result.articles;
+        }
+        )
+  }
+
   searchData(dato:any){
     //console.log(this.categoriaSeleccionada);
 
     switch (dato.typeSearch) {
       case 1:
         console.log("desde el 1 "+dato.id);
+        this.loading=true;
+        try {
+          this._api.getFirstData(dato).subscribe(result=>{
+          console.log(result)
+        }
+        )
+        } catch (error) {
+          console.log(error);
+        }
         break;
       case 2:
         console.log("desde el 2"+dato.id);
